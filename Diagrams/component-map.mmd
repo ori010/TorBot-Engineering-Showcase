@@ -1,0 +1,19 @@
+flowchart LR
+    CH[Conversation Handler]
+    BO[Booking Orchestrator]
+    AE[Availability Engine]
+    TB[Tenant Boundary]
+    DL[(Data Layer)]
+    CS[Calendar Sync]
+    DB[Dashboard]
+
+    CH -->|customer intent| BO
+    BO -->|check slot| AE
+    AE -->|scoped via| TB
+    TB -->|tenant-isolated access| DL
+    BO -->|confirmed appointment| CS
+    CS -->|updated state| DL
+    DL -->|current state| DB
+
+    classDef component fill:#fafafa,stroke:#666,stroke-width:1px
+    class CH,BO,AE,TB,DL,CS,DB component
