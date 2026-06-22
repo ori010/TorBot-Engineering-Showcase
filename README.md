@@ -120,6 +120,6 @@ In line with this project's sanitization rules, this repository does not include
 ## Repository Status
 
 **Status:** Public Engineering Showcase
-**Version:** 1.x
+
 **State:** Actively maintained
 
