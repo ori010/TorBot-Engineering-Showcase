@@ -11,7 +11,7 @@ It is not the production codebase, and it intentionally does not expose workflow
 ## Highlights
 
 - WhatsApp-native booking, rescheduling, and cancellation
-- Multi-tenant architecture with isolated customers and calendars per business
+- Multi-tenant architecture that keeps each business's customers and calendars scoped to that business
 - Real-time availability checks designed to prevent double-booking
 - Business dashboard for bookings, staff, and activity
 - Waitlist handling for fully booked slots
@@ -28,7 +28,7 @@ For the motivation behind the product, see [Why TorBot Exists](./docs/why-torbot
 ## What TorBot Does
 
 - **WhatsApp-native booking** — customers schedule, modify, and cancel appointments through natural conversation, no app install required.
-- **Multi-tenant by design** — a single platform instance serves multiple independent businesses, each with isolated customers, staff, and calendars.
+- **Multi-tenant by design** — a single platform instance serves multiple independent businesses, with each business's customers, staff, and calendars scoped to that business.
 - **Real-time availability** — bookings are checked and held against live calendar state, designed to prevent double-booking.
 - **Business dashboard** — owners and staff view bookings, manage availability, and track activity without touching the underlying automation.
 - **Waitlist handling** — when a slot isn't available, customers can be queued and notified if one opens up.
@@ -38,7 +38,7 @@ These are described here at a conceptual level. Implementation specifics — wor
 
 ## Architecture, at a Glance
 
-TorBot is built as an automation-first system: a conversational front end (WhatsApp) talks to an orchestration layer that manages booking state, availability, and tenant isolation, with a lightweight dashboard giving businesses visibility into their own data.
+TorBot is built as an automation-first system: a conversational front end (WhatsApp) talks to an orchestration layer that manages booking state, availability, and tenant scoping, with a lightweight dashboard giving businesses visibility into their own data.
 
 ```mermaid
 flowchart TB
@@ -87,7 +87,7 @@ The reasoning behind that boundary is detailed in [Repository Philosophy](./docs
 
 ## Explore Further
 
-**Published documentation**
+**Documentation**
 
 | Doc | What it covers |
 |---|---|
@@ -98,28 +98,67 @@ The reasoning behind that boundary is detailed in [Repository Philosophy](./docs
 | [Appointment Lifecycle](./docs/appointment-lifecycle.md) | The booking lifecycle, stage by stage |
 | [Technology Stack](./docs/technology-stack.md) | What TorBot is built with |
 | [Engineering Decisions](./docs/engineering-decisions.md) | Key trade-offs and the reasoning |
+| [Lessons Learned](./docs/lessons-learned.md) | What the build taught, and decisions I'd revisit |
 | [My Role](./docs/my-role.md) | What I designed, built, and operated |
 | [Repository Philosophy](./docs/repository-philosophy.md) | Why the public/private boundary sits where it does |
+| [Security & Sanitization](./docs/security-and-sanitization.md) | How public content is sanitized before publishing |
 
-**Planned documentation** *(not yet published)*
+**Engineering case studies**
 
-- **Lessons learned** — what changed during the build
-- **Engineering case studies** — deep dives into specific problems (e.g. booking concurrency, conversation state, operational monitoring)
-- **Security & sanitization** — how content is reviewed before it's published here
+In-depth looks at specific problems and the engineering reasoning behind them:
 
-## How to Navigate This Repository
+- [Booking Consistency Under Concurrent Demand](./docs/case-studies/booking-consistency.md)
+- [Managing State in an Asynchronous Conversation](./docs/case-studies/conversation-state.md)
+- [Knowing an Unattended System Is Working](./docs/case-studies/operational-monitoring.md)
 
-New here? Read in this order: start with this README for the overview, then [Why TorBot Exists](./docs/why-torbot-exists.md) for the motivation and [Product Overview](./docs/product-overview.md) for the product story. For how it's built, read [Architecture Overview](./docs/architecture-overview.md) and [Architecture Evolution](./docs/architecture-evolution.md), then [Appointment Lifecycle](./docs/appointment-lifecycle.md) for the core booking journey and [Technology Stack](./docs/technology-stack.md) for what it's built with. [Engineering Decisions](./docs/engineering-decisions.md) covers the trade-offs, while [My Role](./docs/my-role.md) and [Repository Philosophy](./docs/repository-philosophy.md) explain ownership and the public/private boundary. The remaining items under *Explore Further* are planned.
+## Repository Structure
+
+```text
+TorBot-Engineering-Showcase/
+├── README.md                         Overview and entry point
+├── DISCLAIMER.md                     What is and isn't included
+├── docs/
+│   ├── product-overview.md           What TorBot does and who it's for
+│   ├── why-torbot-exists.md          Motivation and product reasoning
+│   ├── architecture-overview.md      System components and structure
+│   ├── architecture-evolution.md     How the design grew under pressure
+│   ├── appointment-lifecycle.md      The booking lifecycle, stage by stage
+│   ├── technology-stack.md           What TorBot is built with
+│   ├── engineering-decisions.md      Key trade-offs and reasoning
+│   ├── lessons-learned.md            What the build taught
+│   ├── my-role.md                    Scope of ownership
+│   ├── repository-philosophy.md      The public/private boundary
+│   ├── security-and-sanitization.md  How content is sanitized
+│   └── case-studies/                 Deep dives into specific problems
+│       ├── booking-consistency.md
+│       ├── conversation-state.md
+│       └── operational-monitoring.md
+└── diagrams/                         Mermaid sources for the embedded diagrams
+    ├── system-overview.mmd
+    ├── component-map.mmd
+    └── appointment-lifecycle.mmd
+```
+
+**Suggested reading order**
+
+1. **This README** — the overview and entry point.
+2. **[Why TorBot Exists](./docs/why-torbot-exists.md)** and **[Product Overview](./docs/product-overview.md)** — the motivation and the product.
+3. **[Architecture Overview](./docs/architecture-overview.md)** and **[Architecture Evolution](./docs/architecture-evolution.md)** — how it's built and how it got there.
+4. **[Appointment Lifecycle](./docs/appointment-lifecycle.md)** and **[Technology Stack](./docs/technology-stack.md)** — the core booking journey and the tools behind it.
+5. **[Engineering Decisions](./docs/engineering-decisions.md)** and the **[case studies](./docs/case-studies/)** — the trade-offs, then the deep dives that show them in action.
+6. **[Lessons Learned](./docs/lessons-learned.md)**, **[My Role](./docs/my-role.md)**, **[Repository Philosophy](./docs/repository-philosophy.md)**, and **[Security & Sanitization](./docs/security-and-sanitization.md)** — reflection, ownership, and the boundary.
 
 ## What's Intentionally Not Here
 
-In line with this project's sanitization rules, this repository does not include and will never include: workflow exports, internal automation logic, API payloads, credentials or secrets, internal record identifiers, production URLs, or customer data. See [`DISCLAIMER.md`](./DISCLAIMER.md) for the full boundary.
+In line with this project's sanitization rules, this repository does not include: workflow exports, internal automation logic, API payloads, credentials or secrets, internal record identifiers, production URLs, or customer data. See [`DISCLAIMER.md`](./DISCLAIMER.md) for the full boundary, and [Security & Sanitization](./docs/security-and-sanitization.md) for how content is reviewed before it's published here.
 
 ---
 
 ## Repository Status
 
-**Status:** Public Engineering Showcase
+**Type:** Public engineering showcase
 
-**State:** Actively maintained
+**Maturity:** Actively maintained
+
+**Scope:** Conceptual documentation only — no production code, workflows, or operational assets
 

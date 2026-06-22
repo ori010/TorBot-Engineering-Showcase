@@ -60,7 +60,7 @@ A few constraints shaped almost every choice: a small team building and maintain
 
 ## 4. Decisions I'd Revisit
 
-Some choices fit the current scale but are worth re-examining as the platform grows — for example, where structured-storage and querying needs might eventually outgrow the built-in data layer. These are explored further in the planned lessons-learned document.
+Some choices fit the current scale but are worth re-examining as the platform grows — for example, where structured-storage and querying needs might eventually outgrow the built-in data layer. These are explored further in [`lessons-learned.md`](./lessons-learned.md).
 
 ## 5. What Is Intentionally Not Documented
 

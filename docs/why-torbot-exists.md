@@ -26,7 +26,7 @@ TorBot is built for small and mid-sized service businesses — salons, clinics, 
 ## 6. What "Good" Looks Like
 
 - **For the customer:** book, reschedule, or cancel in a few messages, with no app and no waiting on hold.
-- **For the business:** fewer missed bookings, no double-booking, and a single clear view of what's happening.
+- **For the business:** fewer missed bookings, protection against double-booking, and a single clear view of what's happening.
 
 ## 7. Non-Goals
 

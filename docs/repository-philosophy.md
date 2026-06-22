@@ -26,7 +26,7 @@ The test for any piece of content is simple: *does this reveal how to reconstruc
 
 ## 6. Relationship to the Disclaimer
 
-The high-level statement of what is and isn't included lives in [`DISCLAIMER.md`](../DISCLAIMER.md). The detailed sanitization approach is covered separately in the planned security-and-sanitization document. This document explains the *philosophy* behind the boundary; those describe the boundary itself — they are kept separate to avoid duplication.
+The high-level statement of what is and isn't included lives in [`DISCLAIMER.md`](../DISCLAIMER.md). The detailed sanitization approach is covered separately in [`security-and-sanitization.md`](./security-and-sanitization.md). This document explains the *philosophy* behind the boundary; those describe the boundary itself — they are kept separate to avoid duplication.
 
 ## 7. How to Read This Repository
 

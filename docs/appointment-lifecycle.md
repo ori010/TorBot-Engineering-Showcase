@@ -6,7 +6,7 @@ An appointment is TorBot's core unit of value: everything else in the system exi
 
 ## 2. Lifecycle Overview
 
-An appointment moves through five core stages — Request, Availability Verification, Reservation, Confirmation, and Calendar Synchronization — with two additional paths for changes (Reschedule, Cancellation) and one for unmet demand (Waitlist). Every stage exists to protect the same guarantee: what the customer is told matches what the business's calendar actually reflects.
+An appointment moves through five core stages — Request, Availability Verification, Reservation, Confirmation, and Calendar Synchronization — with two additional paths for changes (Reschedule, Cancellation) and one for unmet demand (Waitlist). Every stage exists to protect the same promise: what the customer is told should match what the business's calendar actually reflects.
 
 ```mermaid
 flowchart TD
@@ -40,7 +40,7 @@ Before anything is offered as confirmed, the requested time is checked against t
 
 ## 5. Reservation
 
-Once a suitable slot is identified, it is held for the customer during the brief window needed to complete the booking. This reservation step prevents two customers from being offered the same slot at the same moment, which matters most when multiple conversations are happening at once.
+Once a suitable slot is identified, it is held for the customer during the brief window needed to complete the booking. This reservation step is designed to keep two customers from being offered the same slot at the same moment, which matters most when multiple conversations are happening at once.
 
 ## 6. Confirmation
 
@@ -48,7 +48,7 @@ When the customer accepts the held slot, the appointment becomes confirmed. From
 
 ## 7. Calendar Synchronization
 
-Immediately after confirmation, the appointment is reflected in the business's calendar, so staff see the same accurate picture the customer was just given. This synchronization is what keeps the conversation and the calendar from ever telling two different stories.
+Immediately after confirmation, the appointment is reflected in the business's calendar, so staff see the same accurate picture the customer was just given. This synchronization is what keeps the conversation and the calendar aligned, rather than telling two different stories.
 
 ## 8. Lifecycle Changes
 
@@ -65,9 +65,9 @@ An appointment reaches completion when the scheduled time has passed and the ser
 ## 10. Lifecycle Principles
 
 - **Nothing is confirmed without verification.** Every path to a confirmed appointment passes through an availability check first.
-- **State changes propagate immediately.** Cancellations free up availability right away; confirmations sync to the calendar right away. The system does not allow the conversation and the calendar to drift apart.
+- **State changes propagate immediately.** Cancellations free up availability right away; confirmations sync to the calendar right away. The system is designed to keep the conversation and the calendar from drifting apart.
 - **Unmet demand is captured, not discarded.** A fully booked slot results in a waitlist offer, not a dead end.
-- **The customer never needs to leave the conversation.** Every lifecycle change — request, reschedule, cancellation — happens in the same channel the appointment was created in.
+- **The customer doesn't need to leave the conversation.** Every lifecycle change — request, reschedule, cancellation — happens in the same channel the appointment was created in.
 
 ## 11. What Is Intentionally Not Documented
 

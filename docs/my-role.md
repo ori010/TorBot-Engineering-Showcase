@@ -6,7 +6,7 @@ This document is a straightforward account of my role on TorBot: what I designed
 
 ## 2. My Role
 
-I built TorBot as the engineer responsible for it end to end — product direction, architecture, implementation, and operation. The decisions documented across this repository are mine, as is responsibility for the trade-offs behind them.
+I led the design, architecture, implementation, and evolution of TorBot. The decisions documented across this repository are mine, as is responsibility for the trade-offs behind them.
 
 ## 3. What I Owned
 
@@ -29,7 +29,7 @@ I used modern tooling, including AI-assisted development and automation, as part
 
 ## 6. Learning & Iteration
 
-TorBot improved through iteration as much as up-front design. Specific lessons are covered in the planned lessons-learned document.
+TorBot improved through iteration as much as up-front design. Specific lessons are covered in [`lessons-learned.md`](./lessons-learned.md).
 
 ## 7. What Is Intentionally Not Documented
 
