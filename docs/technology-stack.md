@@ -32,7 +32,7 @@ The orchestration layer runs the booking logic: interpreting customer intent, ch
 
 ## 5. Data Layer
 
-The data layer holds the records TorBot depends on — businesses, customers, staff, slots, and appointments — using **n8n DataTables** for structured, tenant-scoped records, with isolation enforced so that one business cannot see or affect another's data. Keeping data close to the orchestration layer lets booking logic read and write the records it needs reliably and in real time, without operating a separate database tier.
+The data layer holds the records TorBot depends on — businesses, customers, staff, slots, and appointments — using **n8n DataTables** for structured, tenant-scoped records that are processed within a specific business context. Keeping data close to the orchestration layer lets booking logic read and write the records it needs reliably and in real time, without operating a separate database tier.
 
 ## 6. Dashboard Layer
 

@@ -14,7 +14,7 @@ TorBot serves two distinct audiences:
 
 **End customers** — the people booking appointments, who interact with the business exclusively through WhatsApp and expect a fast, conversational experience rather than a form-filling one.
 
-TorBot is multi-tenant: a single platform instance serves many independent businesses, each with its own isolated customers, staff, and calendar.
+TorBot is multi-tenant: a single platform instance serves many independent businesses, each with its own tenant-scoped customers, staff, and calendar.
 
 ## 3. Business Problems
 
@@ -30,7 +30,7 @@ TorBot is built to remove these specific points of friction, not to be a general
 ## 4. Core Capabilities
 
 - **WhatsApp-native booking** — customers book, modify, and cancel appointments through natural conversation, with no app to install.
-- **Multi-tenant architecture** — each business operates with isolated customers, staff, and calendar data — enforced per request — while running on shared infrastructure.
+- **Multi-tenant architecture** — each business operates with tenant-scoped customers, staff, and calendar data — processed within a specific business context — while running on shared infrastructure.
 - **Real-time availability** — every booking request is checked against live calendar state before being confirmed, which is designed to prevent double-booking.
 - **Business dashboard** — owners and staff get a single view of bookings, availability, and activity without needing to understand the automation behind it.
 - **Waitlist handling** — when a desired slot isn't available, customers can be queued and notified automatically if one opens up.

@@ -38,7 +38,7 @@ These are described here at a conceptual level. Implementation specifics — wor
 
 ## Architecture, at a Glance
 
-TorBot is built as an automation-first system: a conversational front end (WhatsApp) talks to an orchestration layer that manages booking state, availability, and tenant isolation, with a lightweight dashboard giving businesses visibility into their own data.
+TorBot is built as an automation-first system: a conversational front end (WhatsApp) talks to an orchestration layer that manages booking state, availability, and tenant scoping, with a lightweight dashboard giving businesses visibility into their own data.
 
 ```mermaid
 flowchart TB
@@ -158,7 +158,7 @@ In line with this project's sanitization rules, this repository does not include
 
 **Type:** Public engineering showcase
 
-**State:** Actively maintained
+**Maturity:** Actively maintained
 
 **Scope:** Conceptual documentation only — no production code, workflows, or operational assets
 
