@@ -29,7 +29,7 @@ I used modern tooling, including AI-assisted development and automation, as part
 
 ## 6. Learning & Iteration
 
-TorBot improved through iteration as much as up-front design. Specific lessons are covered in the planned lessons-learned document.
+TorBot improved through iteration as much as up-front design. Specific lessons are covered in [`lessons-learned.md`](./lessons-learned.md).
 
 ## 7. What Is Intentionally Not Documented
 

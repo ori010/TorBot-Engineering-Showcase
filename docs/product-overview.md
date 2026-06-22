@@ -40,7 +40,7 @@ TorBot is built to remove these specific points of friction, not to be a general
 
 A customer messages the business's WhatsApp number to book an appointment. TorBot understands the request, checks real-time availability, and either confirms a slot or offers alternatives — including joining a waitlist if nothing is currently open. Once confirmed, the appointment is reflected on the business's calendar and visible to staff on the dashboard. If the customer needs to reschedule or cancel later, the same WhatsApp conversation handles it, with availability re-checked automatically.
 
-Throughout, the business owner never has to manually reconcile messages, calendar entries, and customer records — TorBot keeps them in sync.
+Throughout, the business owner doesn't have to manually reconcile messages, calendar entries, and customer records — TorBot is designed to keep them in sync.
 
 ## 6. Business Value
 
