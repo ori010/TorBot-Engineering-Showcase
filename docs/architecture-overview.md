@@ -79,17 +79,17 @@ flowchart LR
 
 A request enters through the Conversation Handler, which determines intent and hands it to the Booking Orchestrator. The Orchestrator consults the Availability Engine — scoped to the correct tenant via the Tenant Boundary — before committing to a slot. Once a booking is confirmed, Calendar Sync propagates the change, and the Dashboard reflects the updated state for the business.
 
-The flow is intentionally linear and auditable: a request always passes through the same sequence of checks before it becomes a confirmed appointment, which is what makes double-booking structurally difficult rather than just discouraged.
+The flow is intentionally linear and auditable: a request always passes through the same sequence of checks before it becomes a confirmed appointment, which is designed to make double-booking structurally difficult rather than merely discouraged.
 
 ## 5. Multi-Tenant Design
 
-TorBot serves many independent businesses from shared infrastructure, with isolation enforced at the data and request level rather than through separate deployments per business. Every request carries tenant context from the moment it enters the system, and that context is checked at each layer — conversation, availability, data, and dashboard — so that one business's customers, staff, and calendar are never visible to or affected by another's.
+TorBot serves many independent businesses from shared infrastructure, with isolation enforced at the data and request level rather than through separate deployments per business. Every request carries tenant context from the moment it enters the system, and that context is checked at each layer — conversation, availability, data, and dashboard — so that one business's customers, staff, and calendar are not exposed to or affected by another's.
 
 This approach was chosen so the platform can scale to many businesses without the operational cost of standing up isolated infrastructure for each one, while still giving each tenant the experience of a dedicated system.
 
 ## 6. Architectural Principles
 
-- **Single source of truth for availability** — no booking is confirmed without a real-time check, preventing conflicting state from emerging in the first place.
+- **Single source of truth for availability** — no booking is confirmed without a real-time check, which is designed to prevent conflicting state from emerging in the first place.
 - **Tenant isolation by default** — isolation is enforced structurally, not left to convention.
 - **Separation of conversation from logic** — the messaging interface can evolve without requiring changes to booking logic, and vice versa.
 - **Visibility without exposure** — the dashboard gives business owners full insight into their own operations while abstracting away the orchestration underneath.
@@ -105,4 +105,4 @@ What this document intentionally does not cover: specific technologies, internal
 
 This structure exists because the hardest problems in a WhatsApp-native booking platform aren't the conversation itself — they're keeping availability correct under concurrent requests and keeping many businesses' data cleanly separated while sharing infrastructure. Separating conversation, orchestration, data, and visibility into distinct components made both of those problems tractable: availability correctness lives in one place, tenant isolation is enforced consistently across layers, and the dashboard can present a clean view of state without needing to understand how that state was produced.
 
-The result is a system that scales across businesses without each business needing to trust a one-off configuration, and that stays reliable as the conversational surface grows in complexity.
+The result is a system designed to scale across businesses without each business needing to trust a one-off configuration, and to stay reliable as the conversational surface grows in complexity.

@@ -1,6 +1,6 @@
 # TorBot
 
-**TorBot is a production-grade, multi-tenant appointment booking platform that turns WhatsApp into a complete scheduling channel.** This repository is a public engineering showcase: it documents what was built and how it was designed, without exposing the production system itself.
+**TorBot is a production-oriented, multi-tenant appointment booking platform that turns WhatsApp into a complete scheduling channel.** This repository is a public engineering showcase: it documents what was built and how it was designed, without exposing the production system itself.
 
 TorBot lets small and mid-sized service businesses — salons, clinics, studios — manage bookings, customers, and availability through a conversational WhatsApp flow, backed by a business-facing dashboard and a calendar-aware automation engine.
 
@@ -12,7 +12,7 @@ It is not the production codebase, and it intentionally does not expose workflow
 
 - WhatsApp-native booking, rescheduling, and cancellation
 - Multi-tenant architecture with isolated customers and calendars per business
-- Real-time availability checks to prevent double-booking
+- Real-time availability checks designed to prevent double-booking
 - Business dashboard for bookings, staff, and activity
 - Waitlist handling for fully booked slots
 - Calendar-synchronized appointment state
@@ -27,7 +27,7 @@ TorBot was built to close that gap: let the customer book, reschedule, or cancel
 
 - **WhatsApp-native booking** — customers schedule, modify, and cancel appointments through natural conversation, no app install required.
 - **Multi-tenant by design** — a single platform instance serves multiple independent businesses, each with isolated customers, staff, and calendars.
-- **Real-time availability** — bookings are checked and held against live calendar state to prevent double-booking.
+- **Real-time availability** — bookings are checked and held against live calendar state, designed to prevent double-booking.
 - **Business dashboard** — owners and staff view bookings, manage availability, and track activity without touching the underlying automation.
 - **Waitlist handling** — when a slot isn't available, customers can be queued and notified if one opens up.
 - **Calendar integration** — appointment state stays synchronized with the business's calendar.
@@ -77,7 +77,7 @@ TorBot is built on a workflow-automation backend integrated with messaging and c
 
 ## Why This Repository Exists
 
-This showcase exists to demonstrate engineering judgment, not to hand over a working clone. Every asset here — diagrams, flow descriptions, screenshots — has been deliberately reviewed and sanitized so the engineering story is clear while the production system stays protected.
+This showcase exists to demonstrate engineering judgment, not to hand over a working clone. Every asset here — diagrams and written documentation — has been deliberately reviewed and sanitized so the engineering story is clear while the production system stays protected.
 
 If you're a recruiter, engineering manager, or technical peer evaluating this work, the goal is that within a few minutes you understand what was built, how it's structured, and why the decisions behind it hold up — without learning anything that could be used to reconstruct the production system.
 

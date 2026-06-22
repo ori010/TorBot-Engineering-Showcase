@@ -36,7 +36,7 @@ The lifecycle begins when a customer expresses intent to book — typically a ti
 
 ## 4. Availability Verification
 
-Before anything is offered as confirmed, the requested time is checked against the business's real, current availability. This step exists specifically so that a customer is never told "yes" to a slot that's already taken — availability is verified before an appointment is confirmed, not after.
+Before anything is offered as confirmed, the requested time is checked against the business's real, current availability. This step exists specifically so that a customer is not told "yes" to a slot that's already taken — availability is verified before an appointment is confirmed, not after.
 
 ## 5. Reservation
 
@@ -52,7 +52,7 @@ Immediately after confirmation, the appointment is reflected in the business's c
 
 ## 8. Lifecycle Changes
 
-**Reschedule** — A customer can request a new time for an existing appointment through the same conversation. The new time goes through the same availability verification as a fresh request before the change is accepted, so a reschedule can never silently create a conflict.
+**Reschedule** — A customer can request a new time for an existing appointment through the same conversation. The new time goes through the same availability verification as a fresh request before the change is accepted, so a reschedule does not silently create a conflict.
 
 **Cancellation** — A customer can cancel directly within the conversation. Once cancelled, the slot is released back into availability immediately, so it can be offered to the next customer rather than sitting unused.
 
