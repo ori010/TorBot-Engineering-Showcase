@@ -57,4 +57,4 @@ This document describes TorBot as a product. It does not describe how TorBot is 
 
 ## 8. What's Next
 
-To understand how TorBot is structured technically, continue to `architecture-overview.md` and `technology-stack.md`. To see the booking lifecycle in more detail, see `booking-flow.md`.
+To understand how TorBot is structured technically, continue to [architecture-overview.md](./architecture-overview.md) and [technology-stack.md](./technology-stack.md). To see the booking lifecycle in more detail, see [appointment-lifecycle.md](./appointment-lifecycle.md).
