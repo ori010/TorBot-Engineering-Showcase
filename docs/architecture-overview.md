@@ -17,6 +17,31 @@ At a high level, TorBot is composed of four cooperating layers:
 
 These layers are deliberately separated so that the conversational experience, the booking logic, and the data each business owns can evolve independently.
 
+```mermaid
+flowchart TB
+    Customer([Customer])
+    Messaging[Messaging Interface]
+    Orchestration[Conversation / Orchestration]
+    Booking[Availability / Booking Logic]
+    Data[(Tenant-Aware Data)]
+    Calendar[[Calendar Boundary]]
+    Dashboard[Business Dashboard]
+    Staff([Business Staff])
+
+    Customer --> Messaging
+    Messaging --> Orchestration
+    Orchestration --> Booking
+    Booking --> Data
+    Booking --> Calendar
+    Data --> Dashboard
+    Dashboard --> Staff
+    Orchestration --> Messaging
+    Messaging --> Customer
+
+    classDef external fill:#f5f5f5,stroke:#999,stroke-width:1px
+    class Customer,Staff,Calendar external
+```
+
 ## 3. Major Components
 
 - **Conversation Handler** — receives inbound WhatsApp messages, maintains conversational context, and routes intent (book, reschedule, cancel, check status) onward.
@@ -27,6 +52,28 @@ These layers are deliberately separated so that the conversational experience, t
 - **Dashboard** — a read-and-manage surface for business owners and staff, reflecting the current state of bookings and availability without exposing the underlying orchestration.
 
 Each component has a single responsibility. None of them depend on knowing the internal logic of another beyond the data they need to exchange.
+
+```mermaid
+flowchart LR
+    CH[Conversation Handler]
+    BO[Booking Orchestrator]
+    AE[Availability Engine]
+    TB[Tenant Boundary]
+    DL[(Data Layer)]
+    CS[Calendar Sync]
+    DB[Dashboard]
+
+    CH -->|customer intent| BO
+    BO -->|check slot| AE
+    AE -->|scoped via| TB
+    TB -->|tenant-isolated access| DL
+    BO -->|confirmed appointment| CS
+    CS -->|updated state| DL
+    DL -->|current state| DB
+
+    classDef component fill:#fafafa,stroke:#666,stroke-width:1px
+    class CH,BO,AE,TB,DL,CS,DB component
+```
 
 ## 4. Information Flow
 

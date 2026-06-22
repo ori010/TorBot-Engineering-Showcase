@@ -38,6 +38,31 @@ These are described here at a conceptual level. Implementation specifics — wor
 
 TorBot is built as an automation-first system: a conversational front end (WhatsApp) talks to an orchestration layer that manages booking state, availability, and tenant isolation, with a lightweight dashboard giving businesses visibility into their own data.
 
+```mermaid
+flowchart TB
+    Customer([Customer])
+    Messaging[Messaging Interface]
+    Orchestration[Conversation / Orchestration]
+    Booking[Availability / Booking Logic]
+    Data[(Tenant-Aware Data)]
+    Calendar[[Calendar Boundary]]
+    Dashboard[Business Dashboard]
+    Staff([Business Staff])
+
+    Customer --> Messaging
+    Messaging --> Orchestration
+    Orchestration --> Booking
+    Booking --> Data
+    Booking --> Calendar
+    Data --> Dashboard
+    Dashboard --> Staff
+    Orchestration --> Messaging
+    Messaging --> Customer
+
+    classDef external fill:#f5f5f5,stroke:#999,stroke-width:1px
+    class Customer,Staff,Calendar external
+```
+
 A full architecture walkthrough — including the high-level component map and how multi-tenancy is handled — lives in [`docs/architecture-overview.md`](./docs/architecture-overview.md).
 
 ## Booking Flow

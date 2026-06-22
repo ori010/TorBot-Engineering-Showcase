@@ -8,6 +8,28 @@ An appointment is TorBot's core unit of value: everything else in the system exi
 
 An appointment moves through five core stages — Request, Availability Verification, Reservation, Confirmation, and Calendar Synchronization — with two additional paths for changes (Reschedule, Cancellation) and one for unmet demand (Waitlist). Every stage exists to protect the same guarantee: what the customer is told matches what the business's calendar actually reflects.
 
+```mermaid
+flowchart TD
+    Start([Customer initiates]) --> Request[Request]
+    Request --> Verify[Availability Verification]
+    Verify -->|Slot available| Reserve[Reservation]
+    Verify -->|No slot available| Waitlist[Waitlist]
+    Reserve --> Confirm[Confirmation]
+    Confirm --> Sync[Calendar Synchronization]
+    Sync --> Completion([Completion])
+
+    Waitlist -->|Slot opens| Verify
+
+    Sync -.->|Customer requests change| Reschedule[Reschedule]
+    Reschedule --> Verify
+
+    Sync -.->|Customer requests change| Cancel[Cancellation]
+    Cancel --> Released[Slot Released]
+
+    classDef altPath fill:#f5f5f5,stroke:#999,stroke-width:1px,stroke-dasharray: 4 2
+    class Reschedule,Cancel,Waitlist,Released altPath
+```
+
 ## 3. Appointment Request
 
 The lifecycle begins when a customer expresses intent to book — typically a time, a service, or a general request to schedule — through a WhatsApp conversation. At this point, nothing is yet promised to the customer; the request simply initiates the process of finding a slot that works.
