@@ -4,7 +4,7 @@
 
 TorBot lets small and mid-sized service businesses — salons, clinics, studios — manage bookings, customers, and availability through a conversational WhatsApp flow, backed by a business-facing dashboard and a calendar-aware automation engine.
 
-It is not the production codebase, and it intentionally does not expose workflow implementations, internal contracts, or operational internals. See [`DISCLAIMER.md`](./DISCLAIMER.md) (and `docs/security-and-sanitization.md`, once published) for what is and isn't included here.
+It is not the production codebase, and it intentionally does not expose workflow implementations, internal contracts, or operational internals. See [`DISCLAIMER.md`](./DISCLAIMER.md) for what is and isn't included here.
 
 ---
 
@@ -38,17 +38,17 @@ These are described here at a conceptual level. Implementation specifics — wor
 
 TorBot is built as an automation-first system: a conversational front end (WhatsApp) talks to an orchestration layer that manages booking state, availability, and tenant isolation, with a lightweight dashboard giving businesses visibility into their own data.
 
-A full architecture walkthrough — including the high-level component map and how multi-tenancy is handled — lives in `docs/architecture-overview.md`.
+A full architecture walkthrough — including the high-level component map and how multi-tenancy is handled — lives in [`docs/architecture-overview.md`](./docs/architecture-overview.md).
 
 ## Booking Flow
 
 At a high level, a booking moves through: conversation start → intent recognition → availability check → slot hold → confirmation → calendar sync. Edge cases like conflicting requests, cancellations, and waitlisting are handled as variations of this same flow.
 
-A simplified walkthrough is documented in `docs/booking-flow.md`.
+A stage-by-stage walkthrough is documented in [`docs/appointment-lifecycle.md`](./docs/appointment-lifecycle.md).
 
 ## Technology
 
-TorBot is built on a workflow-automation backend integrated with messaging and calendar services, with a lightweight dashboard for business visibility. Specific technology choices are documented separately in `docs/technology-stack.md`.
+TorBot is built on a workflow-automation backend integrated with messaging and calendar services, with a lightweight dashboard for business visibility. Specific technology choices are documented separately in [`docs/technology-stack.md`](./docs/technology-stack.md).
 
 ## Why This Repository Exists
 
@@ -58,24 +58,28 @@ If you're a recruiter, engineering manager, or technical peer evaluating this wo
 
 ## Explore Further
 
+**Published documentation**
+
 | Doc | What it covers |
 |---|---|
-| `docs/product-overview.md` | What TorBot does and who it's for |
-| `docs/architecture-overview.md` | System components and how they fit together |
-| `docs/booking-flow.md` | The booking lifecycle, simplified |
-| `docs/technology-stack.md` | What TorBot is built with |
-| `docs/engineering-decisions.md` | Notable trade-offs and why they were made |
-| `docs/lessons-learned.md` | What changed during the build |
+| [Product Overview](./docs/product-overview.md) | What TorBot does and who it's for |
+| [Architecture Overview](./docs/architecture-overview.md) | System components and how they fit together |
+| [Appointment Lifecycle](./docs/appointment-lifecycle.md) | The booking lifecycle, stage by stage |
+| [Technology Stack](./docs/technology-stack.md) | What TorBot is built with |
 
-*(Some of the above are planned but not yet published in this repository — see the project roadmap.)*
+**Planned documentation** *(not yet published)*
+
+- **Engineering decisions** — notable trade-offs and why they were made
+- **Lessons learned** — what changed during the build
+- **Engineering case studies** — deep dives into specific problems (e.g. booking concurrency, conversation state, operational monitoring)
 
 ## How to Navigate This Repository
 
-New here? Read in this order: start with this README for the overview, then `docs/product-overview.md` for the product story, `docs/architecture-overview.md` for system structure, `docs/booking-flow.md` for the core user journey, and `docs/technology-stack.md` for what it's built with. `docs/engineering-decisions.md` and `docs/lessons-learned.md` are optional deeper reading.
+New here? Read in this order: start with this README for the overview, then [Product Overview](./docs/product-overview.md) for the product story, [Architecture Overview](./docs/architecture-overview.md) for system structure, [Appointment Lifecycle](./docs/appointment-lifecycle.md) for the core booking journey, and [Technology Stack](./docs/technology-stack.md) for what it's built with. The planned deeper-dive docs listed under *Explore Further* will expand on engineering decisions and lessons learned.
 
 ## What's Intentionally Not Here
 
-In line with this project's sanitization rules, this repository does not include and will never include: workflow exports, internal automation logic, API payloads, credentials or secrets, internal record identifiers, production URLs, or customer data. See `DISCLAIMER.md` for the full boundary.
+In line with this project's sanitization rules, this repository does not include and will never include: workflow exports, internal automation logic, API payloads, credentials or secrets, internal record identifiers, production URLs, or customer data. See [`DISCLAIMER.md`](./DISCLAIMER.md) for the full boundary.
 
 ---
 
