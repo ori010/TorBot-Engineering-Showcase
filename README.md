@@ -110,6 +110,7 @@ In line with this project's sanitization rules, this repository does not include
 
 ## Repository Status
 
-**Status:** Engineering Showcase
+**Status:** Public Engineering Showcase
 **Version:** 1.x
-**State:** Work in Progress
+**State:** Actively maintained
+
