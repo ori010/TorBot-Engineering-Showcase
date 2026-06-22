@@ -23,6 +23,8 @@ Service businesses lose bookings to friction: phone tag, missed messages, double
 
 TorBot was built to close that gap: let the customer book, reschedule, or cancel entirely inside a WhatsApp conversation, while giving the business owner a single dashboard to see and control what's happening across every customer and every tenant.
 
+For the motivation behind the product, see [Why TorBot Exists](./docs/why-torbot-exists.md).
+
 ## What TorBot Does
 
 - **WhatsApp-native booking** — customers schedule, modify, and cancel appointments through natural conversation, no app install required.
@@ -81,6 +83,8 @@ This showcase exists to demonstrate engineering judgment, not to hand over a wor
 
 If you're a recruiter, engineering manager, or technical peer evaluating this work, the goal is that within a few minutes you understand what was built, how it's structured, and why the decisions behind it hold up — without learning anything that could be used to reconstruct the production system.
 
+The reasoning behind that boundary is detailed in [Repository Philosophy](./docs/repository-philosophy.md).
+
 ## Explore Further
 
 **Published documentation**
@@ -88,19 +92,24 @@ If you're a recruiter, engineering manager, or technical peer evaluating this wo
 | Doc | What it covers |
 |---|---|
 | [Product Overview](./docs/product-overview.md) | What TorBot does and who it's for |
+| [Why TorBot Exists](./docs/why-torbot-exists.md) | The problem and why WhatsApp-first |
 | [Architecture Overview](./docs/architecture-overview.md) | System components and how they fit together |
+| [Architecture Evolution](./docs/architecture-evolution.md) | How the design grew under pressure |
 | [Appointment Lifecycle](./docs/appointment-lifecycle.md) | The booking lifecycle, stage by stage |
 | [Technology Stack](./docs/technology-stack.md) | What TorBot is built with |
+| [Engineering Decisions](./docs/engineering-decisions.md) | Key trade-offs and the reasoning |
+| [My Role](./docs/my-role.md) | What I designed, built, and operated |
+| [Repository Philosophy](./docs/repository-philosophy.md) | Why the public/private boundary sits where it does |
 
 **Planned documentation** *(not yet published)*
 
-- **Engineering decisions** — notable trade-offs and why they were made
 - **Lessons learned** — what changed during the build
 - **Engineering case studies** — deep dives into specific problems (e.g. booking concurrency, conversation state, operational monitoring)
+- **Security & sanitization** — how content is reviewed before it's published here
 
 ## How to Navigate This Repository
 
-New here? Read in this order: start with this README for the overview, then [Product Overview](./docs/product-overview.md) for the product story, [Architecture Overview](./docs/architecture-overview.md) for system structure, [Appointment Lifecycle](./docs/appointment-lifecycle.md) for the core booking journey, and [Technology Stack](./docs/technology-stack.md) for what it's built with. The planned deeper-dive docs listed under *Explore Further* will expand on engineering decisions and lessons learned.
+New here? Read in this order: start with this README for the overview, then [Why TorBot Exists](./docs/why-torbot-exists.md) for the motivation and [Product Overview](./docs/product-overview.md) for the product story. For how it's built, read [Architecture Overview](./docs/architecture-overview.md) and [Architecture Evolution](./docs/architecture-evolution.md), then [Appointment Lifecycle](./docs/appointment-lifecycle.md) for the core booking journey and [Technology Stack](./docs/technology-stack.md) for what it's built with. [Engineering Decisions](./docs/engineering-decisions.md) covers the trade-offs, while [My Role](./docs/my-role.md) and [Repository Philosophy](./docs/repository-philosophy.md) explain ownership and the public/private boundary. The remaining items under *Explore Further* are planned.
 
 ## What's Intentionally Not Here
 
